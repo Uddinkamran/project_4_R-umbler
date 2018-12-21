@@ -1,0 +1,65 @@
+
+<div class="ui equal width grid">
+<div class="column">
+<img src="<%= "/images/trade1.jpg" %>">
+</div>
+<div class="column">
+<img src="<%= "/images/trade2.jpeg" %>">
+</div>
+<div class="column">
+<img src="<%= "/images/trade3.jpg" %>">
+</div>
+<div class="equal width row">
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+</div>
+
+
+<h1>Welcome to Stockfeed </h1>
+
+<div class="ui segment">
+<div class="ui  form" >
+    <form method="POST" action="/feed">
+        <div class="field">
+            <label>Create Post</label>
+            <input  style="height:20vh; width:80%;" type="textarea" name="content"></input>
+        </div>
+        <button class="positive ui button" type="submit">Post</button>
+    </form>
+</div>
+
+
+<br>
+
+<div class="ui feed">
+
+<% for items in @posts.reverse do%>
+  <div class="event">
+    <div class="label">
+      <img src="/images/avatar/small/elliot.jpg">
+    </div>
+    <div class="content">
+      <div class="summary">
+        <a class="user">
+        <%= items.user.firstName %>
+        </a> created a post
+        <div class="date">
+            <%= Time.now %>
+        </div>
+      </div>
+      <div class="extra text">
+        <%= items.text %>
+        </div>
+        
+        <div class="meta">
+        <a class="like">
+        <i class="like icon"></i> 4 Likes
+        </a>
+        </div>
+        </div>
+        </div>
+        
+ <% end %>
+</div>
+</div>
