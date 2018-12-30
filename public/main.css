@@ -8,11 +8,17 @@ h1 {
 }
 
 img {
-  width: 400px;
-  height: 420px;
+  width: 292px;
+  height: 280px;
+  padding: 0%;
 }
 
-
+.padding{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left:60px;
+    padding-right:60px;
+}
 body{
   background-image: url("/images/background2.png");
   background-size: cover;

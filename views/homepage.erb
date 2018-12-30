@@ -1,18 +1,59 @@
 
-<div class="ui equal width grid">
-<div class="column">
-<img src="<%= "/images/trade1.jpg" %>">
+
+<section class="padding">
+<div class= "ui segment">
+<div class="ui items">
+  <div class="item">
+    <a class=" image">
+      <img src="https://www.telapost.com/wp-content/uploads/2013/10/success-kid.png">
+    </a>
+    <div class="content">
+      <a class="header"><%= User.first.firstName %></a>
+      <div class="description">
+        <p>I was born in the world of birds and being that finance was the main educational domain in their universities, I gained my BhD in finance. I focused on analyzing trends and news to predict market movement, which is similar to how I fly. Never stagnent, its either up or down!</p>
+        <p>It was once sad that many birds can fly but only one can dive both up and down.</p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="column">
-<img src="<%= "/images/trade2.jpeg" %>">
+<div class= "ui segment">
+<div class= "content">
+<a class="header">Mission</a>
+<div class="description">
+        <p>This blog was created for one purpose only and that is to share trade ideas! Everyone has their area of expertise but different amount of experience in the art of trading so by collaborating possible trading ideas and the logic behind it, we may learn from one another. Our mission is to stay ahead, profit and have fun! Yes, besides the headaches and stressed out zombies, we still party!</p>
+    </div>
 </div>
-<div class="column">
-<img src="<%= "/images/trade3.jpg" %>">
+
 </div>
-<div class="equal width row">
-  <div class="column"></div>
-  <div class="column"></div>
-</div>
+</section>
+
+
+
+
+
+
+<div class="ui three column grid">
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="<%= "/images/trade1.jpg" %>">
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="<%= "/images/trade2.jpeg" %>">
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="<%= "/images/trade3.jpg" %>">
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -51,7 +92,7 @@
       <div class="extra text">
         <%= items.text %>
         </div>
-        
+
         <div class="meta">
         <a class="like">
         <i class="like icon"></i> 4 Likes
@@ -59,7 +100,7 @@
         </div>
         </div>
         </div>
-        
+
  <% end %>
 </div>
 </div>
