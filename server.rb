@@ -30,7 +30,7 @@ get '/' do
 end
 
 get '/login' do
- 
+
   erb :login
 end
 
@@ -38,6 +38,7 @@ post '/users/login' do
   user = User.find_by(email: params["email"], password: params["password"])
 
   if user
+    @current_user = user
     session[:user_id] = user.id
     @posts = Post.all
     erb :homepage
@@ -56,9 +57,9 @@ post '/users/signup' do
   if temp_user
     redirect '/login'
   else
-    user = User.create(email: params["email"], password: params["password"], firstName: params["first_name"], lastName: params["last_name"], phoneNum: params["phone_number"], gender: params["gender"] )
+    user = User.create(email: params["email"], password: params["password"], firstName: params["first_name"], lastName: params["last_name"], phoneNum: params["phone_number"], gender: params["gender"], pic: params["pic"] )
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/login'
   end
 end
 
@@ -70,7 +71,7 @@ end
 get '/feed' do
   @posts = Post.all
   erb :homepage
-end 
+end
 
 post '/feed' do
   @post = Post.create(text: params["content"], user_id: session[:user_id])

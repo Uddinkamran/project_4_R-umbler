@@ -10,20 +10,28 @@
 </head>
 <body>
 
-  <%= erb :"/partials/header" %>
-  
-    <div class="ui container">
-      <h1>Blog Test</h1>
-      <br>
-      <% if @user %>
-        <a href="/" class="ui primary button">
-          Home
+<div class="ui right aligned segment">
+      <% if @user = true %>
+        <a href="/logout" class="ui primary button">
+        Logout
         </a>
-        <a href="/sales" class="ui primary button">
-          View All Sales
+        <a href="/logout" class="ui primary button">
+        Delete Account
         </a>
-
+      <% else %>
+        <a href="/login" class="ui primary button">
+          Login
+        </a>
+        <a href="/signup" class="ui primary button">
+          Sign Up
+        </a>
       <% end %>
+    </div>
+
+    <div class="ui container">
+      <h1>Trade Blast</h1>
+      <br>
+
       <br>
       <br>
 

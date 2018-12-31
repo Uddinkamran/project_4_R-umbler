@@ -20,5 +20,5 @@ ActiveRecord::Base.establish_connection(
 #use this file to open pry
 
 
-binding.pry
 
+binding.pry

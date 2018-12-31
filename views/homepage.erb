@@ -5,10 +5,10 @@
 <div class="ui items">
   <div class="item">
     <a class=" image">
-      <img src="https://www.telapost.com/wp-content/uploads/2013/10/success-kid.png">
+      <img src="<%= @current_user.pic%> ">
     </a>
     <div class="content">
-      <a class="header"><%= User.first.firstName %></a>
+      <a class="header"><%= @current_user.firstName%> <%= @current_user.lastName%> </a>
       <div class="description">
         <p>I was born in the world of birds and being that finance was the main educational domain in their universities, I gained my BhD in finance. I focused on analyzing trends and news to predict market movement, which is similar to how I fly. Never stagnent, its either up or down!</p>
         <p>It was once sad that many birds can fly but only one can dive both up and down.</p>
@@ -58,7 +58,7 @@
 
 
 <h1>Welcome to Stockfeed </h1>
-
+<div class="padding">
 <div class="ui segment">
 <div class="ui  form" >
     <form method="POST" action="/feed">
@@ -102,5 +102,6 @@
         </div>
 
  <% end %>
+</div>
 </div>
 </div>

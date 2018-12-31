@@ -7,6 +7,7 @@ def up
       t.string :lastName
       t.string :phoneNum
       t.string :gender
+      t.string :pic
     end
   end
 
