@@ -34,15 +34,19 @@
 
 </div>
 
-<div class="ui three column grid">
-<% for each_user in @user do%>
+
+<div class="ui four column grid">
+<% for each_user in @user_all do%>
   <div class="column">
+   <div class="user_img">
     <div class="ui fluid card">
       <div class="image">
         <img src="<%= each_user.pic %>">
       </div>
+
       <div class="content">
         <a class="header"><%= each_user.firstName %> <%= each_user.lastName %></a>
+      </div>
       </div>
     </div>
   </div>
@@ -56,7 +60,7 @@
 
 
 
-
+<h2>Welcome to Stockfeed </h2>
 
 <div class="ui three column grid">
   <div class="column">
@@ -83,7 +87,7 @@
 </div>
 
 
-<h1>Welcome to Stockfeed </h1>
+
 <div class="padding">
 <div class="ui segment">
 <div class="ui  form" >

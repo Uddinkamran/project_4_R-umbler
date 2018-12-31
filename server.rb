@@ -37,11 +37,12 @@ end
 
 post '/users/login' do
   user = User.find_by(email: params["email"], password: params["password"])
-
   if user
+  @user_all=User.all
    @current_user = user
     session[:user_id] = user.id
     @posts = Post.all
+
     erb :homepage
   else
     erb :signup
@@ -83,7 +84,7 @@ get '/logout/delete/:id' do
 end
 
 get '/feed' do
-  @user=User.all
+  @user_all=User.all
   @current_user = User.find(session[:user_id])
   @posts = Post.all
   erb :homepage
