@@ -26,7 +26,7 @@ register Sinatra::Reloader
 enable :sessions
 
 get '/' do
-  erb :index
+  erb :login
 end
 
 get '/login' do
@@ -34,11 +34,12 @@ get '/login' do
   erb :login
 end
 
+
 post '/users/login' do
   user = User.find_by(email: params["email"], password: params["password"])
 
   if user
-    @current_user = user
+   @current_user = user
     session[:user_id] = user.id
     @posts = Post.all
     erb :homepage
@@ -68,13 +69,25 @@ get '/logout' do
   redirect '/login'
 end
 
+get '/feed/delete/:id' do
+  Post.find(params["id"]).destroy
+  redirect '/feed'
+end
+
+get '/logout/delete' do
+    User.find(session[:user_id]).destroy
+    Post.find(session[:user_id]).destroy
+    redirect '/signup'
+end
+
 get '/feed' do
+  @current_user = User.find(session[:user_id])
   @posts = Post.all
   erb :homepage
 end
 
 post '/feed' do
-  @post = Post.create(text: params["content"], user_id: session[:user_id])
+  @posts = Post.create(text: params["content"], user_id: session[:user_id])
   redirect '/feed'
 end
 

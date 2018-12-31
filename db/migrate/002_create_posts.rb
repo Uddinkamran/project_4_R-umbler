@@ -5,9 +5,9 @@ class CreatePosts < ActiveRecord::Migration[5.0]
           t.integer :user_id
         end
       end
-    
-    
+
+
     def down
-        drop_table :post
+        drop_table :posts
       end
     end

@@ -1,4 +1,12 @@
+<div class="ui right aligned segment">
 
+    <a href="/logout" class="ui primary button">
+        Logout
+    </a>
+    <a href="/logout/delete" class="ui primary button">
+        Delete Account
+    </a>
+ </div>
 
 <section class="padding">
 <div class= "ui segment">
@@ -78,7 +86,7 @@
 <% for items in @posts.reverse do%>
   <div class="event">
     <div class="label">
-      <img src="/images/avatar/small/elliot.jpg">
+      <img src="<%= items.user.pic %>">
     </div>
     <div class="content">
       <div class="summary">
@@ -92,6 +100,7 @@
       <div class="extra text">
         <%= items.text %>
         </div>
+        <a href="/feed/delete/<%= items.id %>" class="mini ui button"> DELETE </a>
 
         <div class="meta">
         <a class="like">
