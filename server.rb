@@ -74,13 +74,16 @@ get '/feed/delete/:id' do
   redirect '/feed'
 end
 
-get '/logout/delete' do
+get '/logout/delete/:id' do
+    user_id = params[:id]
+    user = User.find_by_id(user_id)
+    user.posts.destroy_all
     User.find(session[:user_id]).destroy
-    Post.find(session[:user_id]).destroy
     redirect '/signup'
 end
 
 get '/feed' do
+  @user=User.all
   @current_user = User.find(session[:user_id])
   @posts = Post.all
   erb :homepage
