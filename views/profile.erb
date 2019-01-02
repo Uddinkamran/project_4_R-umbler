@@ -1,0 +1,34 @@
+<div class="ui right aligned segment">
+
+    <a href="/homepage" class="ui primary button">
+        Home
+    </a>
+    <a href="/logout/delete/<%= @current_user.id %>" class="ui primary button">
+        Delete Account
+    </a>
+      <a href="/logout" class="ui primary button">
+        Logout
+    </a>
+ </div>
+
+
+
+<div class="ui segment">
+
+
+<div class="ui centered card">
+  <div class="image">
+    <img src="<%= @current_user.pic%> ">
+  </div>
+  <div class="content" style="text-align:center">
+    <a class="header">Name: <%= @current_user.firstName%> <%= @current_user.lastName%> </a></h3>
+    <a class="header">Email: <%= @current_user.email%></a></h3>
+    <a class="header">Phone Number: <%= @current_user.phoneNum%></a></h3>
+    <a class="header">Gender: <%= @current_user.gender%></a></h3>
+
+  </div>
+</div>
+
+
+
+</div>

@@ -42,7 +42,6 @@ post '/users/login' do
    @current_user = user
     session[:user_id] = user.id
     @posts = Post.all
-
     erb :homepage
   else
     erb :signup
@@ -94,4 +93,18 @@ post '/feed' do
   @posts = Post.create(text: params["content"], user_id: session[:user_id])
   redirect '/feed'
 end
+
+get '/homepage' do
+    @user_all=User.all
+    @current_user = User.find(session[:user_id])
+    @posts = Post.all
+    erb :homepage
+end
+
+get '/profile' do
+    @current_user = User.find(session[:user_id])
+    erb :profile
+end
+
+
 
