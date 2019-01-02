@@ -56,6 +56,10 @@ color: #4183c4;
     color: #4183c4;
 }
 
+.footer {
+  position: absolute;
+  text-align: center;
+}
 
 /*
 .user_img{
