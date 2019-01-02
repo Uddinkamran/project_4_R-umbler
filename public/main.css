@@ -28,9 +28,7 @@ body{
 .ui.container {
   background: rgba(255,255,255,0.5);
 }
-header {
-  background: rgba(255,255,255,0.5);
-}
+
 
 h1{
 font-family: 'Righteous', cursive;
@@ -57,8 +55,11 @@ color: #4183c4;
 }
 
 .footer {
-  position: absolute;
-  text-align: center;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
 }
 
 /*
